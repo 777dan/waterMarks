@@ -2,7 +2,11 @@
 // Строка:
 $string = "Nature";
 // Загрузка рисунка фона
-$im = imageCreateFromJpeg("img.jpg");
+// $im = imageCreateFromJpeg("images/img2.jpg");
+$dirLength = count(scandir("images"))-2;
+for ($i=1; $i <= $dirLength; $i++) { 
+    $im = imageCreateFromJpeg("images/img$i.jpg");
+}
 // Создание в палитре нового цвета — черного.
 $color = imageColorAllocate($im, 255, 255, 0);
 // Размер шрифта
